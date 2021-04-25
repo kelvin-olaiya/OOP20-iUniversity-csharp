@@ -18,7 +18,7 @@ namespace IUniversity.Exams
 
         public ExamCallBuilder()
         {
-            registrationStrategy = new StudentRegistrationFactory().AtTheEndOfList();
+            registrationStrategy = new StudentRegistrationStrategyFactory().AtTheEndOfList();
         }
 
         public ExamCallBuilder CallStart(DateTime callStart)
