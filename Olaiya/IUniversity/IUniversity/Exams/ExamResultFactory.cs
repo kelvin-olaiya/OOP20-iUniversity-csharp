@@ -8,7 +8,7 @@ namespace IUniversity.Exams
     {
         private const int MAX_RESULT = 30;
         private const int SUFFICIENCY = 18;
-        private IExamResult makeEvaluation(ExamResultType resultType, int? result, bool cumLaude)
+        private IExamResult MakeEvaluation(ExamResultType resultType, int? result, bool cumLaude)
         {
             if (!result.HasValue && resultType != ExamResultType.WITHDRAWN)
             {
@@ -38,29 +38,29 @@ namespace IUniversity.Exams
 
             return new ExamResult(resultType, cumLaude, result);
         }
-        public IExamResult declined(int result)
+        public IExamResult Declined(int result)
         {
-            return makeEvaluation(ExamResultType.DECLINED, result, false);
+            return MakeEvaluation(ExamResultType.DECLINED, result, false);
         }
 
-        public IExamResult failed(int result)
+        public IExamResult Failed(int result)
         {
-            return makeEvaluation(ExamResultType.FAILED, result, false);
+            return MakeEvaluation(ExamResultType.FAILED, result, false);
         }
 
-        public IExamResult succededCumLaude()
+        public IExamResult SuccededCumLaude()
         {
-            return makeEvaluation(ExamResultType.SUCCEDED, MAX_RESULT, true);
+            return MakeEvaluation(ExamResultType.SUCCEDED, MAX_RESULT, true);
         }
 
-        public IExamResult suceeded(int result)
+        public IExamResult Suceeded(int result)
         {
-            return makeEvaluation(ExamResultType.SUCCEDED, result, false);
+            return MakeEvaluation(ExamResultType.SUCCEDED, result, false);
         }
 
-        public IExamResult withdrawn()
+        public IExamResult Withdrawn()
         {
-            return makeEvaluation(ExamResultType.WITHDRAWN, null, false);
+            return MakeEvaluation(ExamResultType.WITHDRAWN, null, false);
         }
     }
 }

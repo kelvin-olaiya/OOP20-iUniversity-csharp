@@ -34,7 +34,7 @@ namespace IUniversity.Exams
         {
             DateTime now = DateTime.Today;
             return DateTime.Compare(now, registrationStart) >= 0
-                && DateTime.Compare(now, registrationStart) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
+                && DateTime.Compare(now, registrationEnd) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
         }
 
         public bool IsFull()
