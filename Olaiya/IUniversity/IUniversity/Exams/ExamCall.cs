@@ -37,8 +37,6 @@ namespace IUniversity.Exams
                 && DateTime.Compare(now, registrationStart) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
         }
 
-        
-
         public bool IsFull()
         {
             return registeredStudents.Count == MaxStudents;
