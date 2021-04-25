@@ -58,7 +58,7 @@ namespace IUniversity.Exams
             {
                 return false;
             }
-            registrationStrategy.register(registeredStudents, student);
+            registrationStrategy.register(ref registeredStudents, student);
             return true;
         }
 
