@@ -24,5 +24,19 @@ namespace IUniversity.Entities
             this.Id = id;
             this.RegistrationNumber = registrationNumber;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Student student &&
+                   Name == student.Name &&
+                   LastName == student.LastName &&
+                   Username == student.Username &&
+                   Id == student.Id &&
+                   RegistrationNumber == student.RegistrationNumber;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, LastName, Username, Id, RegistrationNumber);
+        }
     }
 }

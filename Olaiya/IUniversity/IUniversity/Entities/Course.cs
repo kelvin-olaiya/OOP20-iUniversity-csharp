@@ -15,5 +15,15 @@ namespace IUniversity.Entities
             this.CFU = cfu;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Course course &&
+                   Name == course.Name &&
+                   CFU == course.CFU;
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, CFU);
+        }
     }
 }
