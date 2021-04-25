@@ -10,8 +10,12 @@ namespace IUniversity.Exams
     {
         private const int DAYS_BEFORE_CALL = 1;
         public ICourse Course { get; }
-
         public DateTime Start { get; }
+        public int MaxStudents { get; }
+        private IList<IStudent> registeredStudents = new List<IStudent>();
+        private DateTime registrationStart;
+        private DateTime registrationEnd;
+        private IStudentRegistrationStrategy registrationStrategy;
 
         public ExamCall(ICourse course, DateTime start, IExamCall.ExamType type, int maxStudents, IStudentRegistrationStrategy registrationStrategy)
         {
@@ -33,12 +37,7 @@ namespace IUniversity.Exams
                 && DateTime.Compare(now, registrationStart) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
         }
 
-        public int MaxStudents { get; }
-
-        private IList<IStudent> registeredStudents = new List<IStudent>();
-        private DateTime registrationStart;
-        private DateTime registrationEnd;
-        private IStudentRegistrationStrategy registrationStrategy;
+        
 
         public bool IsFull()
         {
