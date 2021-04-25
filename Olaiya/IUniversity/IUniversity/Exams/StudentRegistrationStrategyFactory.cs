@@ -32,19 +32,19 @@ namespace IUniversity.Exams
         }
     }
 
-    class StudentRegistrationFactory
+    class StudentRegistrationStrategyFactory
     {
-        static IStudentRegistrationStrategy AlphabeticalOrder()
+        public IStudentRegistrationStrategy AlphabeticalOrder()
         {
             return new AlphabeticalOrderStrategy();
         }
 
-        static IStudentRegistrationStrategy AtTheEndOfList()
+        public IStudentRegistrationStrategy AtTheEndOfList()
         {
             return new AtTheEndOfListStrategy();
         }
 
-        static IStudentRegistrationStrategy AtTheTopOFList()
+        public IStudentRegistrationStrategy AtTheTopOFList()
         {
             return new AtTheTopOfListStrategy();
         }
