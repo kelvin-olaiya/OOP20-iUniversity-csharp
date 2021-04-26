@@ -21,8 +21,8 @@ namespace IUniversity.Test
             programmazione = new Course("Programmazione", 12);
             algebra = new Course("Algebra", 6);
             marioRossi = new Student("Mario", "Rossi", "stu.rossi.mario", 1, 1);
-            lucianoVerdi = new Student("Mario", "Rossi", "stu.rossi.mario", 2, 2);
-            lucaBianchi = new Student("Mario", "Rossi", "stu.rossi.mario", 3, 3);
+            lucianoVerdi = new Student("Luciano", "Verdi", "stu.rossi.mario", 2, 2);
+            lucaBianchi = new Student("Luca", "Bianchi", "stu.rossi.mario", 3, 3);
         }
 
         public ICourse AnalisiMatematica
