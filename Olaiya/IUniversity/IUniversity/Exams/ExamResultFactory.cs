@@ -62,5 +62,10 @@ namespace IUniversity.Exams
         {
             return MakeEvaluation(ExamResultType.WITHDRAWN, null, false);
         }
+
+        public IExamResult Succeded(int value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
