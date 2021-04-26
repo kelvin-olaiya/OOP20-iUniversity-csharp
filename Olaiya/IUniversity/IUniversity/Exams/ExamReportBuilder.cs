@@ -25,21 +25,25 @@ namespace IUniversity.Exams
 
         public ExamReportBuilder Student(IStudent student)
         {
+            this.student = student;
             return this;
         }
 
         public ExamReportBuilder ResultType(ExamResultType resultType)
         {
+            this.resultType = resultType;
             return this;
         }
 
         public ExamReportBuilder Result(int result)
         {
+            this.result = result;
             return this;
         }
 
         public ExamReportBuilder Laude(bool laude)
         {
+            this.cumLaude = laude;
             return this;
         }
 
