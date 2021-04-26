@@ -9,16 +9,16 @@ namespace IUniversity.Exams
 {
     class AlphabeticalOrderStrategy : IStudentRegistrationStrategy
     {
-        public void register(IList<IStudent> list, IStudent student)
+        public void register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
-            list = list.OrderBy(s => s.LastName).ToList();
+            list = list.OrderBy(s => s.LastName.ToLower()).ToList();
         }
     }
 
     class AtTheTopOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(IList<IStudent> list, IStudent student)
+        public void register(ref IList<IStudent> list, IStudent student)
         {
             list.Insert(0, student);
         }
@@ -26,7 +26,7 @@ namespace IUniversity.Exams
 
     class AtTheEndOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(IList<IStudent> list, IStudent student)
+        public void register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
         }
@@ -44,7 +44,7 @@ namespace IUniversity.Exams
             return new AtTheEndOfListStrategy();
         }
 
-        public IStudentRegistrationStrategy AtTheTopOFList()
+        public IStudentRegistrationStrategy AtTheTopOfList()
         {
             return new AtTheTopOfListStrategy();
         }

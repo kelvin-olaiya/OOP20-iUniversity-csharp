@@ -18,5 +18,18 @@ namespace IUniversity.Exams
             CumLaude = cumLaude;
             Result = result;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is ExamResult result &&
+                   ResultType == result.ResultType &&
+                   CumLaude == result.CumLaude &&
+                   Result == result.Result;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ResultType, CumLaude, Result);
+        }
     }
 }

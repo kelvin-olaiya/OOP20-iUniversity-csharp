@@ -61,7 +61,7 @@ namespace IUniversity.Exams
             {
                 throw new InvalidOperationException("Arguments missing");
             }
-            else if (DateTime.Compare(DateTime.Now, DateTime.Now.AddDays(-DAYS_BEFORE_CALL)) >= 0)
+            else if (DateTime.Compare(DateTime.Today, DateTime.Today.AddDays(DAYS_BEFORE_CALL)) >= 0)
             {
                 throw new InvalidOperationException("Exam call creation is late");
             }

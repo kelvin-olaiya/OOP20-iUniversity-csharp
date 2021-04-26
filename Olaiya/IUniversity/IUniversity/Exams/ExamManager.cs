@@ -55,7 +55,7 @@ namespace IUniversity.Exams
 
         public bool AlreadyHeld(IExamCall examCall)
         {
-            return DateTime.Compare(DateTime.Now, examCall.Start) <= 0;
+            return DateTime.Compare(DateTime.Today, examCall.Start) >= 0;
         }
 
         public bool AlreadyReportedSuccess(IExamReport examReport)

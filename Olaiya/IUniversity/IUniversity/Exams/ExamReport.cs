@@ -22,5 +22,17 @@ namespace IUniversity.Exams
             ExamResult = result;
             Date = date;
         }
+        public override bool Equals(object obj)
+        {
+            return obj is ExamReport report &&
+                   EqualityComparer<ICourse>.Default.Equals(Course, report.Course) &&
+                   EqualityComparer<IStudent>.Default.Equals(Student, report.Student) &&
+                   EqualityComparer<IExamResult>.Default.Equals(ExamResult, report.ExamResult);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Course, Student, ExamResult);
+        }
     }
 }

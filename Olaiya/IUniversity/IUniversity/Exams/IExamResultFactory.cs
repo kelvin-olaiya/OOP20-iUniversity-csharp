@@ -6,14 +6,14 @@ namespace IUniversity.Exams
 {
     interface IExamResultFactory
     {
-        IExamResult succededCumLaude();
+        IExamResult SuccededCumLaude();
 
-        IExamResult suceeded(int result);
+        IExamResult Suceeded(int result);
 
-        IExamResult failed(int result);
+        IExamResult Failed(int result);
 
-        IExamResult withdrawn();
+        IExamResult Withdrawn();
 
-        IExamResult declined(int result);
+        IExamResult Declined(int result);
     }
 }

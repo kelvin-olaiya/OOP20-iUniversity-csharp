@@ -10,8 +10,12 @@ namespace IUniversity.Exams
     {
         private const int DAYS_BEFORE_CALL = 1;
         public ICourse Course { get; }
-
         public DateTime Start { get; }
+        public int MaxStudents { get; }
+        private IList<IStudent> registeredStudents = new List<IStudent>();
+        private DateTime registrationStart;
+        private DateTime registrationEnd;
+        private IStudentRegistrationStrategy registrationStrategy;
 
         public ExamCall(ICourse course, DateTime start, IExamCall.ExamType type, int maxStudents, IStudentRegistrationStrategy registrationStrategy)
         {
@@ -21,7 +25,7 @@ namespace IUniversity.Exams
             MaxStudents = maxStudents;
             this.registrationStrategy = registrationStrategy;
             registrationStart = DateTime.Today;
-            registrationEnd = DateTime.Today.AddDays(-DAYS_BEFORE_CALL);
+            registrationEnd = Start.AddDays(-DAYS_BEFORE_CALL);
         }
 
         public IExamCall.ExamType Type { get; }
@@ -30,15 +34,8 @@ namespace IUniversity.Exams
         {
             DateTime now = DateTime.Today;
             return DateTime.Compare(now, registrationStart) >= 0
-                && DateTime.Compare(now, registrationStart) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
+                && DateTime.Compare(now, registrationEnd) <= 0 ? IExamCall.CallStatus.OPEN : IExamCall.CallStatus.CLOSED;
         }
-
-        public int MaxStudents { get; }
-
-        private IList<IStudent> registeredStudents = new List<IStudent>();
-        private DateTime registrationStart;
-        private DateTime registrationEnd;
-        private IStudentRegistrationStrategy registrationStrategy;
 
         public bool IsFull()
         {
@@ -57,11 +54,11 @@ namespace IUniversity.Exams
 
         public bool RegisterStudent(IStudent student)
         {
-            if (IsFull() || IsOpen() || this.registeredStudents.Contains(student))
+            if (IsFull() || !IsOpen() || this.registeredStudents.Contains(student))
             {
                 return false;
             }
-            registrationStrategy.register(registeredStudents, student);
+            registrationStrategy.register(ref registeredStudents, student);
             return true;
         }
 
@@ -79,5 +76,18 @@ namespace IUniversity.Exams
             return registeredStudents.Remove(student);
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is ExamCall call &&
+                   EqualityComparer<ICourse>.Default.Equals(Course, call.Course) &&
+                   Start == call.Start &&
+                   MaxStudents == call.MaxStudents &&
+                   Type == call.Type;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Course, Start, MaxStudents, Type);
+        }
     }
 }
