@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    interface IExamReport
+    public interface IExamReport
     {
         ICourse Course { get; }
         IStudent Student { get; }

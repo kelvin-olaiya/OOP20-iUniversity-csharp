@@ -32,7 +32,7 @@ namespace IUniversity.Exams
         }
     }
 
-    class StudentRegistrationStrategyFactory
+    public class StudentRegistrationStrategyFactory
     {
         public IStudentRegistrationStrategy AlphabeticalOrder()
         {

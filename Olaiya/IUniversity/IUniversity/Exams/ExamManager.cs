@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
-    class ExamManager : IExamManager
+    public class ExamManager : IExamManager
     {
         private ISet<IExamCall> examCalls = new HashSet<IExamCall>();
         private ISet<IExamReport> examReports = new HashSet<IExamReport>();

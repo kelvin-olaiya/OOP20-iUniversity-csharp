@@ -6,7 +6,7 @@ using IUniversity.Entities;
 
 namespace IUniversity.Exams
 {
-    interface IExamCall
+    public interface IExamCall
     {
         enum CallStatus { OPEN, CLOSED }
         enum ExamType { ORAL, WRITTEN, PRACTICAL }

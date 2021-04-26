@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
-    class ExamCall : IExamCall
+    public class ExamCall : IExamCall
     {
         private const int DAYS_BEFORE_CALL = 1;
         public ICourse Course { get; }

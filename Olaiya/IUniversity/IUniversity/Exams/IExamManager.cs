@@ -6,7 +6,7 @@ using static IUniversity.Exams.IExamCall;
 
 namespace IUniversity.Exams
 {
-    interface IExamManager
+    public interface IExamManager
     {
         ISet<IExamCall> ExamCalls();
         ISet<IExamReport> ExamReports();

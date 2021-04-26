@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    interface IExamResultFactory
+    public interface IExamResultFactory
     {
         IExamResult SuccededCumLaude();
 

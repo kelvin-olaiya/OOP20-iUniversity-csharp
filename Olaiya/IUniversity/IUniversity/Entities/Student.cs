@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IUniversity.Entities
 {
-    class Student : IStudent
+    public class Student : IStudent
     {
         public string Name { get; }
 

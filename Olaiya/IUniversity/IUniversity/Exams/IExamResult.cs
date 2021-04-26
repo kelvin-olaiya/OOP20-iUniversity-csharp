@@ -4,8 +4,8 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    enum ExamResultType { SUCCEDED, WITHDRAWN, FAILED, DECLINED };
-    interface IExamResult
+    public enum ExamResultType { SUCCEDED, WITHDRAWN, FAILED, DECLINED };
+    public interface IExamResult
     {
         ExamResultType ResultType { get; }
         bool CumLaude { get; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    interface IStudentRegistrationStrategy
+    public interface IStudentRegistrationStrategy
     {
         void register(ref IList<IStudent> list, IStudent student);
     }

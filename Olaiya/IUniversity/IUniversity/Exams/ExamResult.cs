@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    class ExamResult : IExamResult
+    public class ExamResult : IExamResult
     {
         public ExamResultType ResultType { get; }
 
