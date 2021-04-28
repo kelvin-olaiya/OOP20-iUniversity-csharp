@@ -14,7 +14,7 @@ namespace IUniversity.Test
         private const int MAX_STUDENTS = 2;
         private const int DAYS_BEFORE_CALL = 1;
 
-        private SampleData sd = new SampleData();
+        private readonly SampleData sd = new SampleData();
         private IExamManager examManager;
 
         [SetUp]
