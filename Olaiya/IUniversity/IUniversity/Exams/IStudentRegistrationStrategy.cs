@@ -7,6 +7,6 @@ namespace IUniversity.Exams
 {
     public interface IStudentRegistrationStrategy
     {
-        void register(ref IList<IStudent> list, IStudent student);
+        void Register(ref IList<IStudent> list, IStudent student);
     }
 }

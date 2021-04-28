@@ -9,7 +9,7 @@ namespace IUniversity.Exams
 {
     class AlphabeticalOrderStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
             list = list.OrderBy(s => s.LastName.ToLower()).ToList();
@@ -18,7 +18,7 @@ namespace IUniversity.Exams
 
     class AtTheTopOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Insert(0, student);
         }
@@ -26,7 +26,7 @@ namespace IUniversity.Exams
 
     class AtTheEndOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
         }

@@ -11,11 +11,11 @@ namespace IUniversity.Test
 {
     class StudentRegistrationStrategyFactoryTest
     {
-        private StudentRegistrationStrategyFactory strategyFactory = new StudentRegistrationStrategyFactory();
-        private SampleData sd = new SampleData();
-        private IStudent marioRossi;
-        private IStudent lucianoVerdi;
-        private IStudent lucaBianchi;
+        private readonly StudentRegistrationStrategyFactory strategyFactory = new StudentRegistrationStrategyFactory();
+        private readonly SampleData sd = new SampleData();
+        private readonly IStudent marioRossi;
+        private readonly IStudent lucianoVerdi;
+        private readonly IStudent lucaBianchi;
 
         private IList<IStudent> registrationList;
 
@@ -36,18 +36,18 @@ namespace IUniversity.Test
         {
             IList<IStudent> list = new List<IStudent>();
             IStudentRegistrationStrategy registrationStrategy = strategyFactory.AtTheTopOfList();
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             list.Add(lucianoVerdi);
             list.Add(lucaBianchi);
             list.Add(marioRossi);
             Assert.True(registrationList.SequenceEqual(list));
             registrationList.Clear();
             list.Clear();
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             list.Add(lucianoVerdi);
             list.Add(marioRossi);
             list.Add(lucaBianchi);
@@ -59,18 +59,18 @@ namespace IUniversity.Test
         {
             IList<IStudent> list = new List<IStudent>();
             IStudentRegistrationStrategy registrationStrategy = strategyFactory.AtTheEndOfList();
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             list.Add(marioRossi);
             list.Add(lucaBianchi);
             list.Add(lucianoVerdi);
             Assert.True(registrationList.SequenceEqual(list));
             registrationList.Clear();
             list.Clear();
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             list.Add(lucaBianchi);
             list.Add(marioRossi);
             list.Add(lucianoVerdi);
@@ -82,17 +82,17 @@ namespace IUniversity.Test
         {
             IList<IStudent> list = new List<IStudent>();
             IStudentRegistrationStrategy registrationStrategy = strategyFactory.AlphabeticalOrder();
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             list.Add(lucaBianchi);
             list.Add(marioRossi);
             list.Add(lucianoVerdi);
             Assert.True(registrationList.SequenceEqual(list));
             registrationList.Clear();
-            registrationStrategy.register(ref registrationList, lucaBianchi);
-            registrationStrategy.register(ref registrationList, marioRossi);
-            registrationStrategy.register(ref registrationList, lucianoVerdi);
+            registrationStrategy.Register(ref registrationList, lucaBianchi);
+            registrationStrategy.Register(ref registrationList, marioRossi);
+            registrationStrategy.Register(ref registrationList, lucianoVerdi);
             Assert.True(registrationList.SequenceEqual(list));
         }
     }

@@ -9,8 +9,8 @@ namespace IUniversity.Exams
 {
     public class ExamManager : IExamManager
     {
-        private ISet<IExamCall> examCalls = new HashSet<IExamCall>();
-        private ISet<IExamReport> examReports = new HashSet<IExamReport>();
+        private readonly ISet<IExamCall> examCalls = new HashSet<IExamCall>();
+        private readonly ISet<IExamReport> examReports = new HashSet<IExamReport>();
 
         private bool AlreadyPublished(IExamCall examCall)
         {
