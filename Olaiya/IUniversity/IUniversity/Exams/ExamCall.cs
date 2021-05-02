@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     public class ExamCall : IExamCall
     {
         private const int DAYS_BEFORE_CALL = 1;

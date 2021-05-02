@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     public class ExamManager : IExamManager
     {
         private readonly ISet<IExamCall> examCalls = new HashSet<IExamCall>();

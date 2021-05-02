@@ -4,6 +4,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     public class ExamResult : IExamResult
     {
         public ExamResultType ResultType { get; }
