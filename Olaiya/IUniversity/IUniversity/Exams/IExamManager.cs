@@ -6,6 +6,9 @@ using static IUniversity.Exams.IExamCall;
 
 namespace IUniversity.Exams
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IExamManager
     {
         /// <summary>
