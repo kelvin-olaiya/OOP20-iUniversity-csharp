@@ -8,12 +8,12 @@ namespace IUniversity.Test
     class SampleData
     {
 
-        private ICourse analisiMatematica;
-        private ICourse programmazione;
-        private ICourse algebra;
-        private IStudent marioRossi;
-        private IStudent lucianoVerdi;
-        private IStudent lucaBianchi;
+        private readonly ICourse analisiMatematica;
+        private readonly ICourse programmazione;
+        private readonly ICourse algebra;
+        private readonly IStudent marioRossi;
+        private readonly IStudent lucianoVerdi;
+        private readonly IStudent lucaBianchi;
 
         public SampleData()
         {

@@ -6,7 +6,10 @@ using static IUniversity.Exams.IExamCall;
 
 namespace IUniversity.Exams
 {
-    class ExamCallBuilder
+    /// <summary>
+    /// Builder for exam calls
+    /// </summary>
+    public class ExamCallBuilder
     {
         private const int DAYS_BEFORE_CALL = 1;
         private int maximumStudents;

@@ -7,32 +7,38 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     class AlphabeticalOrderStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
             list = list.OrderBy(s => s.LastName.ToLower()).ToList();
         }
     }
 
+    ///<inheritdoc/>
     class AtTheTopOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Insert(0, student);
         }
     }
 
+    ///<inheritdoc/>
     class AtTheEndOfListStrategy : IStudentRegistrationStrategy
     {
-        public void register(ref IList<IStudent> list, IStudent student)
+        public void Register(ref IList<IStudent> list, IStudent student)
         {
             list.Add(student);
         }
     }
 
-    class StudentRegistrationStrategyFactory
+    /// <summary>
+    /// Factory for student registration strategy
+    /// </summary>
+    public class StudentRegistrationStrategyFactory
     {
         public IStudentRegistrationStrategy AlphabeticalOrder()
         {

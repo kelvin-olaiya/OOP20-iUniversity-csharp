@@ -5,8 +5,13 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    interface IStudentRegistrationStrategy
+    public interface IStudentRegistrationStrategy
     {
-        void register(ref IList<IStudent> list, IStudent student);
+        /// <summary>
+        /// Registration strategy
+        /// </summary>
+        /// <param name="list">The list to witch add the student</param>
+        /// <param name="student">The student to add</param>
+        void Register(ref IList<IStudent> list, IStudent student);
     }
 }

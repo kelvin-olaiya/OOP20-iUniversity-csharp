@@ -6,16 +6,17 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
-    class ExamCall : IExamCall
+    ///<inheritdoc/>
+    public class ExamCall : IExamCall
     {
         private const int DAYS_BEFORE_CALL = 1;
         public ICourse Course { get; }
         public DateTime Start { get; }
         public int MaxStudents { get; }
         private IList<IStudent> registeredStudents = new List<IStudent>();
-        private DateTime registrationStart;
-        private DateTime registrationEnd;
-        private IStudentRegistrationStrategy registrationStrategy;
+        private readonly DateTime registrationStart;
+        private readonly DateTime registrationEnd;
+        private readonly IStudentRegistrationStrategy registrationStrategy;
 
         public ExamCall(ICourse course, DateTime start, IExamCall.ExamType type, int maxStudents, IStudentRegistrationStrategy registrationStrategy)
         {
@@ -58,7 +59,7 @@ namespace IUniversity.Exams
             {
                 return false;
             }
-            registrationStrategy.register(ref registeredStudents, student);
+            registrationStrategy.Register(ref registeredStudents, student);
             return true;
         }
 

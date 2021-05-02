@@ -5,11 +5,11 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
-    class ExamReportBuilder
+    /// <summary>
+    /// Builder for exam report
+    /// </summary>
+    public class ExamReportBuilder
     {
-        private const int MAX_RESULT = 30;
-        private const int MIN_RESULT = 0;
-
         private ICourse course;
         private IStudent student;
         private ExamResultType? resultType;

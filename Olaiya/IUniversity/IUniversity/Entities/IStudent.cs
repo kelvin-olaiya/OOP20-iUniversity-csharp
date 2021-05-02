@@ -4,9 +4,9 @@ using System.Text;
 
 namespace IUniversity.Entities
 {
-    enum Gender { MALE, FEMALE, UNSPECIFIED }
-    enum UserType { STUDENT, TEACHER, ADMIN }
-    interface IStudent
+    public enum Gender { MALE, FEMALE, UNSPECIFIED }
+    public enum UserType { STUDENT, TEACHER, ADMIN }
+    public interface IStudent
     {
         string Name { get; }
         string LastName { get; }
