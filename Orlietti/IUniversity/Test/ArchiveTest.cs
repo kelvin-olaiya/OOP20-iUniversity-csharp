@@ -22,12 +22,12 @@ namespace IUniversity.IUniversity.Test
                                                 .Gender(Gender.MALE)
                                                 .DegreeProgramme(sampleData.GetIngegneria())
                                                 .Build();
-            Assert.Equals("Mario", marioRossi.GetName());
-            Assert.Equals("Rossi", marioRossi.GetLastName());
-            Assert.Equals(0, marioRossi.GetId());
-            Assert.Equals(0, marioRossi.GetRegistrationNumber());
-            Assert.Equals("stu.mario.rossi", marioRossi.GetUsername());
-            Assert.Equals(sampleData.GetIngegneria(), marioRossi.GetDegreeProgramme());
+            Assert.AreEqual("Mario", marioRossi.GetName());
+            Assert.AreEqual("Rossi", marioRossi.GetLastName());
+            Assert.AreEqual(0, marioRossi.GetId());
+            Assert.AreEqual(0, marioRossi.GetRegistrationNumber());
+            Assert.AreEqual("stu.mario.rossi", marioRossi.GetUsername());
+            Assert.AreEqual(sampleData.GetIngegneria(), marioRossi.GetDegreeProgramme());
         }
     
         [Test]
@@ -45,12 +45,12 @@ namespace IUniversity.IUniversity.Test
                                                 .Gender(Gender.MALE)
                                                 .Courses(courses)
                                                 .Build();
-            Assert.Equals("Claudio", claudioBravo.GetName());
-            Assert.Equals("Bravo", claudioBravo.GetLastName());
-            Assert.Equals(0, claudioBravo.GetId());
-            Assert.Equals(0, claudioBravo.GetRegistrationNumber());
-            Assert.Equals("doc.claudio.bravo", claudioBravo.GetUsername());
-            Assert.Equals(courses, claudioBravo.GetCourses());
+            Assert.AreEqual("Claudio", claudioBravo.GetName());
+            Assert.AreEqual("Bravo", claudioBravo.GetLastName());
+            Assert.AreEqual(0, claudioBravo.GetId());
+            Assert.AreEqual(0, claudioBravo.GetRegistrationNumber());
+            Assert.AreEqual("doc.claudio.bravo", claudioBravo.GetUsername());
+            Assert.AreEqual(courses, claudioBravo.GetCourses());
         }
     
         [Test]
@@ -72,8 +72,8 @@ namespace IUniversity.IUniversity.Test
                                                 .DegreeProgramme(sampleData.GetIngegneria())
                                                 .Build();
             archive.AddStudent(marioGrossi);
-            Assert.Equals(1,marioRossi.GetRegistrationNumber());
-            Assert.Equals(2,marioGrossi.GetRegistrationNumber());
+            Assert.AreEqual(1,marioRossi.GetRegistrationNumber());
+            Assert.AreEqual(2,marioGrossi.GetRegistrationNumber());
         }
     
         [Test]
@@ -100,8 +100,8 @@ namespace IUniversity.IUniversity.Test
                                                         .Courses(courses)
                                                         .Build();
             archive.AddTeacher(francescoFrancoletti);
-            Assert.Equals(1,claudioBravo.GetRegistrationNumber());
-            Assert.Equals(2,francescoFrancoletti.GetRegistrationNumber());
+            Assert.AreEqual(1,claudioBravo.GetRegistrationNumber());
+            Assert.AreEqual(2,francescoFrancoletti.GetRegistrationNumber());
         }
     }
 }
