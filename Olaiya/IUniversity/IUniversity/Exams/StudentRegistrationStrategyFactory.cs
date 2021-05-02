@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     class AlphabeticalOrderStrategy : IStudentRegistrationStrategy
     {
         public void Register(ref IList<IStudent> list, IStudent student)
@@ -16,6 +17,7 @@ namespace IUniversity.Exams
         }
     }
 
+    ///<inheritdoc/>
     class AtTheTopOfListStrategy : IStudentRegistrationStrategy
     {
         public void Register(ref IList<IStudent> list, IStudent student)
@@ -24,6 +26,7 @@ namespace IUniversity.Exams
         }
     }
 
+    ///<inheritdoc/>
     class AtTheEndOfListStrategy : IStudentRegistrationStrategy
     {
         public void Register(ref IList<IStudent> list, IStudent student)
@@ -32,6 +35,9 @@ namespace IUniversity.Exams
         }
     }
 
+    /// <summary>
+    /// Factory for student registration strategy
+    /// </summary>
     public class StudentRegistrationStrategyFactory
     {
         public IStudentRegistrationStrategy AlphabeticalOrder()

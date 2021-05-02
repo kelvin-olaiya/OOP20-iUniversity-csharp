@@ -5,6 +5,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     public class ExamReport : IExamReport
     {
         public ICourse Course { get; }

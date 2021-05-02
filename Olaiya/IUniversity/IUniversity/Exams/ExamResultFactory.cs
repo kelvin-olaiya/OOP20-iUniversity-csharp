@@ -4,6 +4,7 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
+    ///<inheritdoc/>
     public class ExamResultFactory : IExamResultFactory
     {
         private const int MAX_RESULT = 30;

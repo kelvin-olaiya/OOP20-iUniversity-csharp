@@ -5,6 +5,9 @@ using System.Text;
 
 namespace IUniversity.Exams
 {
+    /// <summary>
+    /// Builder for exam report
+    /// </summary>
     public class ExamReportBuilder
     {
         private ICourse course;
